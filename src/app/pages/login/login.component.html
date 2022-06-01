@@ -1,0 +1,16 @@
+<form class="example-container" [formGroup]="form" #frmLogin="ngForm" (ngSubmit)="iniciarSession()">
+
+    <h1>LOGIN</h1>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="user" required formControlName="user">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="Password" required formControlName="password">
+    </mat-form-field>
+
+    <button id="boton-login" mat-raised-button type="submit">
+        <span>LOGIN</span>
+    </button>
+
+</form>

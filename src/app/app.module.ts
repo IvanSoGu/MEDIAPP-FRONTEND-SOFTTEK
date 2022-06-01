@@ -7,40 +7,38 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MedicoComponent } from './pages/medico/medico.component';
-import { PacienteComponent } from './pages/paciente/paciente.component';
-import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
-import { MedicoEdicionComponent } from './pages/medico/medico-edicion/medico-edicion.component';
 import { OrganizarMaterialModule } from './organizar-material/organizar-material.module';
-import { MatSortModule } from '@angular/material/sort';
-import { RouterModule } from '@angular/router';
-import { AnaliticaComponent } from './pages/analitica/analitica.component';
-import { AnaliticaEdicionComponent } from './pages/analitica/analitica-edicion/analitica-edicion.component';
-import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
-import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { CommonModule } from '@angular/common';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
+
+
+export function tokenGetter() {
+  return sessionStorage.getItem("access_token");
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnaliticaComponent,
-    AnaliticaEdicionComponent,
-    EspecialidadComponent,
-    EspecialidadEdicionComponent,
-    MedicoComponent,
-    MedicoEdicionComponent,
-    PacienteComponent,
-    PacienteEdicionComponent,
+    LayoutComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    CommonModule,
     FormsModule,
-    MatSortModule,
+    HttpClientModule,
     OrganizarMaterialModule,
     ReactiveFormsModule,
-    RouterModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: [environment.HOST.substring(7)],
+        disallowedRoutes: [`${environment.HOST}/login/enviarCorreo`],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

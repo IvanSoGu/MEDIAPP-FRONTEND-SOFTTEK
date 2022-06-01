@@ -1,0 +1,21 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+    background-color: #D1CCDC;
+}
+.example-container>* {
+    width: 100%;
+}
+.invalido {
+    color: red;
+}
+
+#boton-login{
+    background-color: #424c55;
+    color: white;
+}
