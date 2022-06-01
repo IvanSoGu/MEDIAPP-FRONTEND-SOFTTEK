@@ -12,14 +12,11 @@ import { OrganizarMaterialModule } from '../organizar-material/organizar-materia
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from '../app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { MatSortModule } from '@angular/material/sort';
 import { PagesRoutingModule } from './pagesRouting.module';
-import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { Not403Component } from './not403/not403.component';
+import { Not404Component } from '../not404/not404.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +24,13 @@ import { InicioComponent } from './inicio/inicio.component';
     AnaliticaEdicionComponent,
     EspecialidadComponent,
     EspecialidadEdicionComponent,
+    InicioComponent,
+    LoginComponent,
     MedicoComponent,
     MedicoEdicionComponent,
+    Not403Component,
     PacienteComponent,
     PacienteEdicionComponent,
-    LoginComponent,
-    InicioComponent,
     
   ],
   imports: [

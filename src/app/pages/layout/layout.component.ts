@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { Menu } from 'src/app/_modulo/menu'
+import { LoginService } from 'src/app/_services/login.service';
 import { MenuService } from 'src/app/_services/menu.service';
 import { environment } from 'src/environments/environment';
 
@@ -15,7 +16,8 @@ export class LayoutComponent implements OnInit {
 
   constructor(
     private rutas: Router,
-    private menuService: MenuService
+    private menuService: MenuService,
+    private loginService: LoginService,
     ) { }
 
   menus : Menu[]
@@ -32,4 +34,7 @@ export class LayoutComponent implements OnInit {
     this.rutas.navigate([url]);
   }
 
+  cerrarSesion(){
+    this.loginService.cerrarSesion();
+  }
 }

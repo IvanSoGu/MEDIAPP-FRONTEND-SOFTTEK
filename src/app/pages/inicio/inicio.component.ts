@@ -1,3 +1,4 @@
+import { CDK_CONNECTED_OVERLAY_SCROLL_STRATEGY_PROVIDER_FACTORY } from '@angular/cdk/overlay/overlay-directives';
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { MenuService } from 'src/app/_services/menu.service';
@@ -24,6 +25,7 @@ export class InicioComponent implements OnInit {
 
     this.menuService.listarPorUsuario(this.user).subscribe(     //sessionStorage.getItem("usuario")
       x => {this.menuService.setMenuCambio(x);
+        console.log(x);
     });
   }
 
