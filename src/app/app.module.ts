@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
 
 
 export function tokenGetter() {
-  return sessionStorage.getItem("access_token");
+  return sessionStorage.getItem(environment.TOKEN_NAME);
 }
 
 @NgModule({

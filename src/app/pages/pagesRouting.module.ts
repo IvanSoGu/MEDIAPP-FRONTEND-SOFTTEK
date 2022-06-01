@@ -18,7 +18,7 @@ export const routes: Routes = [
         {path : 'nuevo', component: EspecialidadEdicionComponent},
         {path : 'edicion/:id', component: EspecialidadEdicionComponent},
       ]},
-    {path : 'examen', component: AnaliticaComponent, children:[
+    {path : 'analitica', component: AnaliticaComponent, children:[
         {path : 'nuevo', component: AnaliticaEdicionComponent},
         {path : 'edicion/:id', component: AnaliticaEdicionComponent},
       ]},
