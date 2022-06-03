@@ -10,6 +10,7 @@ import { MedicoComponent } from "./medico/medico.component";
 import { Not403Component } from "./not403/not403.component";
 import { PacienteEdicionComponent } from "./paciente/paciente-edicion/paciente-edicion.component";
 import { PacienteComponent } from "./paciente/paciente.component";
+import { ReporteComponent } from "./reporte/reporte.component";
 
 export const routes: Routes = [
     {path : 'paciente', component: PacienteComponent, children:[
@@ -26,6 +27,7 @@ export const routes: Routes = [
       ], canActivate: [GuardService]},
     {path : 'medico', component: MedicoComponent, canActivate: [GuardService]},
     {path: 'inicio', component: InicioComponent, canActivate: [GuardService]},
+    {path: 'reporte', component: ReporteComponent, canActivate: [GuardService]},
     {path: 'not-403', component: Not403Component},
     
     

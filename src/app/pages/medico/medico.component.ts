@@ -67,6 +67,18 @@ export class MedicoComponent implements OnInit {
 
   }
 
+  eliminar(id:number){
+    this.medicoService.eliminar(id).subscribe(()=>{
+      this.medicoService.listar().subscribe(data=>{
+        this.medicoService.setMedicoCambiado(data);
+        this.medicoService.setMensajeCambiado("ELIMINADO");
+      })
+    })
+    /*this.pacienteService.getMensajeCambiado().subscribe(mensaje=>{
+      this.snackBar.open(mensaje,"cerrar")
+    })*/
+  }
+
 }
 
 

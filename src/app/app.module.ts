@@ -12,7 +12,6 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { CommonModule } from '@angular/common';
 import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
-import { Not403Component } from './pages/not403/not403.component';
 import { Not404Component } from './not404/not404.component';
 
 
@@ -26,6 +25,7 @@ export function tokenGetter() {
     AppComponent,
     LayoutComponent,
     Not404Component,
+    
   ],
   imports: [
     AppRoutingModule,

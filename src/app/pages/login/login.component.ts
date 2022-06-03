@@ -28,9 +28,11 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSession(){
+    this.loginService.cerrarSesion();
     this.user = this.form.value['user'];
     this.password = this.form.value['password'];
     this.loginService.login(this.user, this.password).subscribe(data => {
+      console.log(data);
       sessionStorage.setItem(environment.TOKEN_NAME, data.access_token);
       this.router.navigate(['inicio']);
     })

@@ -16,7 +16,8 @@ import { PagesRoutingModule } from './pagesRouting.module';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { Not403Component } from './not403/not403.component';
-import { Not404Component } from '../not404/not404.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { Not404Component } from '../not404/not404.component';
     Not403Component,
     PacienteComponent,
     PacienteEdicionComponent,
-    
+    ReporteComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +40,7 @@ import { Not404Component } from '../not404/not404.component';
     HttpClientModule,
     OrganizarMaterialModule,
     PagesRoutingModule,
+    PdfViewerModule,
     ReactiveFormsModule,
     RouterModule,
   ]
