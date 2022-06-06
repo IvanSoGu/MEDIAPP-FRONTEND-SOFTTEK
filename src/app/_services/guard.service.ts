@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { map, Observable } from 'rxjs';
+import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Menu } from '../_modulo/menu';
 import { LoginService } from './login.service';

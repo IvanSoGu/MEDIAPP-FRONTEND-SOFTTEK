@@ -18,11 +18,13 @@ import { InicioComponent } from './inicio/inicio.component';
 import { Not403Component } from './not403/not403.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ConsultaComponent } from './consulta/consulta.component';
 
 @NgModule({
   declarations: [
     AnaliticaComponent,
     AnaliticaEdicionComponent,
+    ConsultaComponent,
     EspecialidadComponent,
     EspecialidadEdicionComponent,
     InicioComponent,

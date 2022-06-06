@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ConsultaListaAnaliticaDTO } from '../_modulo/consultaListaAnaliticaDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,9 @@ export class ConsultasService {
   generarReporte(){
     return this.http.get(`${this.url}/generarReporte`, {responseType: 'blob'})
   }
+
+  registrarTransaccion(consultaDTO: ConsultaListaAnaliticaDTO){
+    console.log(consultaDTO);
+    return this.http.post(this.url, consultaDTO); 
+}
 }

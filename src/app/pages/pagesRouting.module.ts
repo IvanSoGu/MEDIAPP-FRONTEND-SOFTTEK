@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { GuardService } from "../_services/guard.service";
 import { AnaliticaEdicionComponent } from "./analitica/analitica-edicion/analitica-edicion.component";
 import { AnaliticaComponent } from "./analitica/analitica.component";
+import { ConsultaComponent } from "./consulta/consulta.component";
 import { EspecialidadEdicionComponent } from "./especialidad/especialidad-edicion/especialidad-edicion.component";
 import { EspecialidadComponent } from "./especialidad/especialidad.component";
 import { InicioComponent } from "./inicio/inicio.component";
@@ -28,6 +29,7 @@ export const routes: Routes = [
     {path : 'medico', component: MedicoComponent, canActivate: [GuardService]},
     {path: 'inicio', component: InicioComponent, canActivate: [GuardService]},
     {path: 'reporte', component: ReporteComponent, canActivate: [GuardService]},
+    {path: 'consulta', component: ConsultaComponent, canActivate: [GuardService]},
     {path: 'not-403', component: Not403Component},
     
     
