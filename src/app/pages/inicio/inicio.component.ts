@@ -23,8 +23,6 @@ export class InicioComponent implements OnInit {
     let tokenDecodificado = helper.decodeToken(token);
     this.user = tokenDecodificado.user_name;
 
-    this.menuService.listarPorUsuario(this.user).subscribe(  data=>    //sessionStorage.getItem("usuario")
-      this.menuService.setMenuCambio(data));
   }
 
 }

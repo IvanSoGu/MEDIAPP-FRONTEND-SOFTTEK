@@ -72,6 +72,9 @@ body {
   padding: 0;
   margin: 0;
 }
+.botoncico{
+  font-size: 2vmin;
+}
 .error-wrapper {
   min-height: 100vh;
   width: 100vw;
@@ -118,6 +121,14 @@ svg {
 }
 .rightclaw {
   visibility: hidden;
+}
+.link_403{			 
+	color: #fff;
+  background: #39ac31;
+  display: inline-block;
+  margin: 5%;
+  padding: 2%;
+  text-align: center;
 }
 @keyframes errorBackground {
   from {

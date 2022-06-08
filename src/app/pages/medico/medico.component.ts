@@ -13,6 +13,7 @@ import { MedicoEdicionComponent } from './medico-edicion/medico-edicion.componen
   templateUrl: './medico.component.html',
   styleUrls: ['./medico.component.css']
 })
+
 export class MedicoComponent implements OnInit {
 
   origen: MatTableDataSource<Medico>;
@@ -54,17 +55,11 @@ export class MedicoComponent implements OnInit {
   }
 
   cambioFiltro(event: Sort){
-
     if (event.direction) {
-
       this.liveAnnouncer.announce(`Sorted ${event.direction}ending`);
-
     } else {
-
       this.liveAnnouncer.announce('Sorting cleared');
-
     }
-
   }
 
   eliminar(id:number){
@@ -74,9 +69,6 @@ export class MedicoComponent implements OnInit {
         this.medicoService.setMensajeCambiado("ELIMINADO");
       })
     })
-    /*this.pacienteService.getMensajeCambiado().subscribe(mensaje=>{
-      this.snackBar.open(mensaje,"cerrar")
-    })*/
   }
 
 }

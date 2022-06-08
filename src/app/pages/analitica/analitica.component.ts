@@ -1,6 +1,7 @@
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Analitica } from 'src/app/_modulo/analitica';
 import { AnaliticasService } from 'src/app/_services/analiticas.service';
@@ -19,6 +20,7 @@ export class AnaliticaComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  liveAnnouncer: LiveAnnouncer;
 
   ngOnInit(): void {
 
@@ -33,6 +35,14 @@ export class AnaliticaComponent implements OnInit {
       this.origen.sort = this.sort;
       this.origen.paginator = this.paginator;
     })
+  }
+
+  cambioFiltro(event: Sort){
+    if (event.direction) {
+      this.liveAnnouncer.announce(`Sorted ${event.direction}ending`);
+    } else {
+      this.liveAnnouncer.announce('Sorting cleared');
+    }
   }
 
 }
