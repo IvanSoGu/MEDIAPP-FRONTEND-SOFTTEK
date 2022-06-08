@@ -46,4 +46,13 @@ export class EspecialidadComponent implements OnInit {
     }
   }
 
+  eliminar(id:number){
+    this.especialidadService.eliminar(id).subscribe(()=>{
+      this.especialidadService.listar().subscribe(data=>{
+        this.especialidadService.setEspecialidadCambiado(data);
+        this.especialidadService.setMensajeCambiado("ELIMINADO");
+      })
+    })
+  }
+
 }

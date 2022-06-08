@@ -45,4 +45,13 @@ export class AnaliticaComponent implements OnInit {
     }
   }
 
+  eliminar(id:number){
+    this.analiticaService.eliminar(id).subscribe(()=>{
+      this.analiticaService.listar().subscribe(data=>{
+        this.analiticaService.setAnaliticaCambiado(data);
+        this.analiticaService.setMensajeCambiado("ELIMINADO");
+      })
+    })
+  }
+
 }
