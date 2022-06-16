@@ -12,7 +12,6 @@ export class GenericService<T> {
   ) {  }
 
   listar(){
-    console.log("llama a listar")
     return this.http.get<T[]>(this.url)
   }
   listarPorId(id:number){

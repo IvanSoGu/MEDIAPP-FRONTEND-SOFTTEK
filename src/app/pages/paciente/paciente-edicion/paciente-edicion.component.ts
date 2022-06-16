@@ -1,6 +1,7 @@
 import { REFERENCE_PREFIX } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Paciente } from 'src/app/_modulo/paciente';
@@ -20,7 +21,8 @@ export class PacienteEdicionComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private pacienteService: PacientesService
+    private pacienteService: PacientesService,
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -83,6 +85,9 @@ export class PacienteEdicionComponent implements OnInit {
       .subscribe(data => {
         this.pacienteService.pacienteCambiado.next(data);
         this.pacienteService.setMensajeCambiado("SE REGISTRO");
+      })
+      this.pacienteService.getMensajeCambiado().subscribe(data =>{
+        this.snackBar.open(data, 'CLOSE', {duration : 6000});
       })
     }
     this.router.navigate(['paciente']);

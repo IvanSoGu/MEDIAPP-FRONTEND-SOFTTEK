@@ -1,5 +1,11 @@
 <router-outlet></router-outlet>
 
+<div class="buscar">
+  <mat-label>Buscar especialidad</mat-label>
+  <!-- Evento que se ejecuta al pulsar una tecla y se filtra -->
+</div>
+<input class="buscarInput" matInput (keyup)="buscar($event)" placeholder="Nombres o descripcion" #input>
+
 <table mat-table [dataSource]="origen" class="mat-elevation-z8" matSort (matSortChange)="cambioFiltro($event)">
 
     <ng-container matColumnDef="idEspecialidad">

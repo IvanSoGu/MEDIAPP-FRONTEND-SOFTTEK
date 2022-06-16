@@ -1,6 +1,7 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Analitica } from 'src/app/_modulo/analitica';
@@ -13,7 +14,9 @@ import { AnaliticasService } from 'src/app/_services/analiticas.service';
 })
 export class AnaliticaComponent implements OnInit {
 
-  constructor(private analiticaService : AnaliticasService) { }
+  constructor(private analiticaService : AnaliticasService,
+    private snackBar: MatSnackBar,) { }
+    
   origen: MatTableDataSource<Analitica>;
   columnasAMostrar: String[] = ['idAnalitica', 'nombre', 'descripcion', 'acciones'];
 
@@ -52,6 +55,24 @@ export class AnaliticaComponent implements OnInit {
         this.analiticaService.setMensajeCambiado("ELIMINADO");
       })
     })
+    this.analiticaService.getMensajeCambiado().subscribe(data =>{
+      this.snackBar.open(data, 'CLOSE', {duration : 6000});
+    })
+  }
+
+  buscar(event: Event) {
+    // Se guarda el filtro del campo de búsqueda en una constante
+    var filtro = (event.target as HTMLInputElement).value;
+    console.log(filtro);
+
+    filtro= filtro.trim();
+    // Se usa MatTableDataSource para buscar según el filtro
+    // Opcional si se quiere usar .trim() o toLowerCase()
+    this.origen.filter = filtro;
+    // Si se encuentra se muestra como una página única
+    if (this.origen.paginator) {
+      this.origen.paginator.firstPage();
+    }
   }
 
 }

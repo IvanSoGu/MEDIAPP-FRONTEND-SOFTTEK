@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
 import { Not404Component } from './not404/not404.component';
+import { Not403Component } from './not403/not403.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 
@@ -24,8 +26,9 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     LayoutComponent,
+    Not403Component,
     Not404Component,
-    
+    RegistroComponent,
   ],
   imports: [
     AppRoutingModule,

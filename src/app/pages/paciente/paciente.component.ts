@@ -1,11 +1,10 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Paciente } from 'src/app/_modulo/paciente';
-
-
 import { PacientesService } from 'src/app/_services/pacientes.service';
 
 @Component({
@@ -15,8 +14,9 @@ import { PacientesService } from 'src/app/_services/pacientes.service';
 })
 export class PacienteComponent implements OnInit {
 
-//pacientes : Paciente[];
-  constructor(private pacienteService : PacientesService) { }
+  constructor(private pacienteService : PacientesService,
+    private snackBar: MatSnackBar,) { }
+    
   origen: MatTableDataSource<Paciente>;
   columnasAMostrar: String[] = ['idPaciente', 'nombres', 'apellidos', 'acciones'];
 
@@ -26,8 +26,6 @@ export class PacienteComponent implements OnInit {
   liveAnnouncer: LiveAnnouncer;
 
   ngOnInit(): void {
-//  this.pacienteService.listar().subscribe(
-//  x => this.pacientes = x);
 
     this.pacienteService.pacienteCambiado.subscribe(data => {
       this.origen = new MatTableDataSource(data);
@@ -57,9 +55,21 @@ export class PacienteComponent implements OnInit {
         this.pacienteService.setMensajeCambiado("ELIMINADO");
       })
     })
-    /*this.pacienteService.getMensajeCambiado().subscribe(mensaje=>{
-      this.snackBar.open(mensaje,"cerrar")
-    })*/
+    this.pacienteService.getMensajeCambiado().subscribe(mensaje=>{
+      this.snackBar.open(mensaje,"cerrar", {duration : 6000})
+    })
   }
 
+  buscar(event: Event) {
+    // Se guarda el filtro del campo de búsqueda en una constante
+    var filtro = (event.target as HTMLInputElement).value;
+    filtro= filtro.trim();
+    // Se usa MatTableDataSource para buscar según el filtro
+    // Opcional si se quiere usar .trim() o toLowerCase()
+    this.origen.filter = filtro;
+    // Si se encuentra se muestra como una página única
+    if (this.origen.paginator) {
+      this.origen.paginator.firstPage();
+    }
+  }
 }

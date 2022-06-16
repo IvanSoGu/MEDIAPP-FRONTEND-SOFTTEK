@@ -8,7 +8,6 @@ import { EspecialidadEdicionComponent } from "./especialidad/especialidad-edicio
 import { EspecialidadComponent } from "./especialidad/especialidad.component";
 import { InicioComponent } from "./inicio/inicio.component";
 import { MedicoComponent } from "./medico/medico.component";
-import { Not403Component } from "./not403/not403.component";
 import { PacienteEdicionComponent } from "./paciente/paciente-edicion/paciente-edicion.component";
 import { PacienteComponent } from "./paciente/paciente.component";
 import { ReporteComponent } from "./reporte/reporte.component";
@@ -30,10 +29,9 @@ export const routes: Routes = [
     {path: 'inicio', component: InicioComponent, canActivate: [GuardService]},
     {path: 'reporte', component: ReporteComponent, canActivate: [GuardService]},
     {path: 'consulta', component: ConsultaComponent, canActivate: [GuardService]},
-    {path: 'not-403', component: Not403Component},
-    
-    
 ]
+
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

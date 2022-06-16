@@ -70,11 +70,8 @@ export class MedicoEdicionComponent implements OnInit {
         this.medicoService.setMensajeCambiado("SE REGISTRO");
       })
       this.medicoService.getMensajeCambiado().subscribe(data =>{
-        this.snackBar.open(data, 'CLOSE', {duration : 10000});
+        this.snackBar.open(data, 'CLOSE', {duration : 6000});
       })
     }
-    //this.router.navigate(['medico']);
-    
   }
-
 }

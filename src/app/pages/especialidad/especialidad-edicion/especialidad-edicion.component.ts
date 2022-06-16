@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Especialidad } from 'src/app/_modulo/especialidad';
@@ -18,7 +19,8 @@ export class EspecialidadEdicionComponent implements OnInit {
 
   constructor(private especialidadService : EspecialidadService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
 
@@ -69,6 +71,9 @@ export class EspecialidadEdicionComponent implements OnInit {
       .subscribe(data => {
         this.especialidadService.especialidadCambiado.next(data);
         this.especialidadService.setMensajeCambiado("SE REGISTRO");
+      })
+      this.especialidadService.getMensajeCambiado().subscribe(data =>{
+        this.snackBar.open(data, 'CLOSE', {duration : 6000});
       })
     }
     this.router.navigate(['especialidad']);

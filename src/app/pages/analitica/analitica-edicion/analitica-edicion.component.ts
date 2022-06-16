@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,7 +23,8 @@ export class AnaliticaEdicionComponent implements OnInit {
   constructor(
     private analiticaService : AnaliticasService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private snackBar: MatSnackBar,) { }
 
 
   ngOnInit(): void {
@@ -74,6 +76,9 @@ export class AnaliticaEdicionComponent implements OnInit {
       .subscribe(data => {
         this.analiticaService.analiticaCambiado.next(data);
         this.analiticaService.setMensajeCambiado("SE REGISTRO");
+      })
+      this.analiticaService.getMensajeCambiado().subscribe(data =>{
+        this.snackBar.open(data, 'CLOSE', {duration : 6000});
       })
     }
     this.router.navigate(['analitica']);

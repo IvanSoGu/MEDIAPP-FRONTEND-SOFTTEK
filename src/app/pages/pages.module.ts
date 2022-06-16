@@ -15,10 +15,10 @@ import { RouterModule } from '@angular/router';
 import { PagesRoutingModule } from './pagesRouting.module';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { Not403Component } from './not403/not403.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ConsultaComponent } from './consulta/consulta.component';
+import { ReportePDFComponent } from './reporte/reporte-pdf/reporte-pdf.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +31,10 @@ import { ConsultaComponent } from './consulta/consulta.component';
     LoginComponent,
     MedicoComponent,
     MedicoEdicionComponent,
-    Not403Component,
     PacienteComponent,
     PacienteEdicionComponent,
     ReporteComponent,
+    ReportePDFComponent,
   ],
   imports: [
     CommonModule,

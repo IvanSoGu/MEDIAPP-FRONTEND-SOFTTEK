@@ -1,12 +1,11 @@
-
-
 .colorinchis {
     height: 100%;
     width: 100%;
-    background: linear-gradient(-45deg, #f29407, #00fff2, #d9e713, #038a0f);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 150% 150%;
     animation: gradient 12s ease infinite;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes gradient {
@@ -25,13 +24,13 @@
     position: relative;
     top: 20%;
     flex-direction: column;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
     padding-top: 5%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 5%;
-    background-color: antiquewhite;
+    background-color: white;
     text-align: center;
     display: flex;
     align-items: center;
@@ -47,145 +46,29 @@
 }
 
 #boton-login {
-    background-color: #201A2880;
-    color: white;
-    width: 100%;
+    font-size: 2vw;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 h1 {
     font-family: "AllertaStencil";
     color: #222222;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
+    font-size: 6vw;
 }
-@media all and (max-width: 480px) {
-    h1{
-        font-size: 20px;
-    }
-    span{
-        font-size: 8px;
-    }
-    #boton-login{
-        height: 16px;
-    }
+
+.mat-form-field{
+    font-size: 1vw;
 }
-@media all and (min-width: 480px) and (max-width: 720px) {
-    h1{
-        font-size: 30px;
-    }
-    span{
-        font-size: 14px;
-    }
-    #boton-login{
-        height: 28;
-    }
+
+#nuevoUsuario{
+    padding-top:5%;
 }
-@media all and (min-width: 720px) and (max-width: 960px) {
-    h1{
-        font-size: 40px;
-    }
-    span{
-        font-size: 20px;
-    }
-    #boton-login{
-        height: 40px;
-    }
-}
-@media all and (min-width: 960px) and (max-width: 1180px) {
-    h1{
-        font-size: 50px;
-    }
-    span{
-        font-size: 26px;
-    }
-    #boton-login{
-        height: 52px;
-    }
-}
-@media all and (min-width: 1180px) and (max-width: 1420px) {
-    h1{
-        font-size: 60px;
-    }
-    span{
-        font-size: 32px;
-    }
-    #boton-login{
-        height: 64px;
-    }
-}
-@media all and (min-width: 1420px) and (max-width: 1660px) {
-    h1{
-        font-size: 70px;
-    }
-    span{
-        font-size: 38px;
-    }
-    #boton-login{
-        height: 76px;
-    }
-}
-@media all and (min-width: 1420px) and (max-width: 1660px) {
-    h1{
-        font-size: 80px;
-    }
-    span{
-        font-size: 44px;
-    }
-    #boton-login{
-        height: 88px;
-    }
-}
-@media all and (min-width: 1660px) and (max-width: 1900px) {
-    h1{
-        font-size: 90px;
-    }
-    span{
-        font-size: 50px;
-    }
-    #boton-login{
-        height: 100px;
-    }
-}
-@media all and (min-width: 1900px) and (max-width: 2120px) {
-    h1{
-        font-size: 100px;
-    }
-    span{
-        font-size: 56px;
-    }
-    #boton-login{
-        height: 112px;
-    }
-}
-@media all and (min-width: 2120px) and (max-width: 2340px) {
-    h1{
-        font-size: 110px;
-    }
-    span{
-        font-size: 62px;
-    }
-    #boton-login{
-        height: 124px;
-    }
-}
-@media all and (min-width: 2340px) and (max-width: 2560px) {
-    h1{
-        font-size: 120px;
-    }
-    span{
-        font-size: 68px;
-    }
-    #boton-login{
-        height: 136px;
-    }
-}
-@media all and (min-width: 2340px) {
-    h1{
-        font-size: 130px;
-    }
-    span{
-        font-size: 74px;
-    }
-    #boton-login{
-        height: 148px;
-    }
+
+#nuevoUsuarioButton{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 2vw;
+    width: 100%;
 }

@@ -1,5 +1,5 @@
 .page_404{ 
-    padding:40px 0; 
+    padding-top: 5%; 
     background:#fff; 
     font-family: 'Arvo', serif;
     text-align: center;
@@ -11,7 +11,6 @@
 }
 
 .four_zero_four_bg{
- 
     background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
     height: 400px;
     background-position: center;
@@ -20,7 +19,7 @@
  
  
 .four_zero_four_bg h1{
-    font-size:80px;
+    font-size: 26vmin;
 }
  
 .four_zero_four_bg h3{

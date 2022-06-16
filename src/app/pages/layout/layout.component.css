@@ -22,3 +22,11 @@
   .example-app-name{
     font-family: "AllertaStencil";
   }
+
+.cruz{
+  display: flex;
+  justify-content: center;
+}
+span{
+  font-family: "AllertaStencil";
+}

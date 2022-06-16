@@ -1,10 +1,13 @@
-div{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*Gato opcional
+.div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../../assets/Images/Healthcare.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  /*Gato opcional
     height: 100%;
     display: flex;
     align-items: center;
@@ -12,12 +15,20 @@ div{
     background: #161616;*/
 }
 
-h1{
-    padding-top:5%;
-    text-align: center;
-    color: rgb(30, 209, 212);
-    padding-bottom: 20%;
+.div2{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25%;
+}
 
+h1 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  font-family: "AllertaStencil";
 }
 
 /*.cat {
@@ -192,4 +203,3 @@ h1{
     border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
   }
   /* General page styling */
-  
